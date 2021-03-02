@@ -163,13 +163,11 @@ func (p *Plugin) runCreateCommand(args []string, extra *model.CommandArgs) (*mod
 	config := p.getConfiguration()
 
 	license := ""
-
 	if install.License == licenseOptionE10 {
 		license = config.E10License
 	} else if install.License == licenseOptionE20 {
 		license = config.E20License
 	}
-
 
 	err = validVersionOption(install.Version)
 	if err != nil {
